@@ -1,5 +1,5 @@
-# Let's modify this piece of shit
+# WELCOME
 
-print("Hello World")
+*This is my very firs try to connect git and ATOM
 
-This is only a text file
+__Let's start with some factorial calculation!__
