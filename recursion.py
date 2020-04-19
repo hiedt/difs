@@ -3,7 +3,7 @@ def factorial(x):
         return 1
     return x*factorial(x-1)
 # Another traditional way
-def facorial_old(x):
+def factorial_old(x):
     result = 1
     while(x>0):
         result = result*x
