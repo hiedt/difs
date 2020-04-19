@@ -1,5 +1,5 @@
-# Hello_World
+# Let's modify this piece of shit
 
-This is Hugh
+print("Hello World")
 
-This commit is my first change after moving from ex-Git to here!
+This is only a text file
