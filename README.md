@@ -20,7 +20,7 @@ Check README.md in each folder for more details
 
 ### Simple web app with
 
-- [ ] MPK
+- [ ] MSPK
 - [ ] MERN
 - [ ] Elasticpy
 - [ ] RedisML
