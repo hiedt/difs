@@ -1,6 +1,0 @@
-# Cache
-**/__pycache__
-Dockerfile
-.dockerignore
-.gitignore
-**/*:Zone.Identifier

@@ -1,26 +1,17 @@
 # DIFS - DO IT FROM SCRATCH
 
-Everything I learn is coded from scratch and store here for later review. Please rate a star if you find anything useful.
+Everything I learn is coded from scratch 100% and store here for later review. Please rate a star if you find anything useful.
 
 ## FINISHED
 
-Check README.md in each folder for more details
+Check README.md in each folder for more details about:
 
-- [x] Linear regression
+### Traditional machine learning algorithms
+
+- [x] Linear regression (extend) => Compare **regression** with **interpolation**
 - [x] Logistic regression
 - [x] Decision tree
 - [x] Softmax regression
+- [x] k-Nearest Neighbor
 
 ## TODO
-
-### AI/ML
-
-- [ ] Image recognition with conventional CNN (Log Loss) vs Distance Metrics Loss
-- [ ] Object detection & object tracking with Yolov3 + DeepSORT
-
-### Simple web app with
-
-- [ ] MSPK
-- [ ] MERN
-- [ ] Elasticpy
-- [ ] RedisML
