@@ -5,3 +5,10 @@
 **/*.xls
 **/*.xlsx
 **/data
+**/checkpoints
+
+# Logs
+**/*logs
+
+# Environment caching
+.vscode
