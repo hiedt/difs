@@ -1,10 +1,10 @@
-# DIFS - DO IT FROM SCRATCH
+## DIFS - DO IT FROM SCRATCH
 
-Everything I learn from data structures & algorithms to machine learning & deep learning is coded from scratch 100% and stored here for later review. Please rate a star if you find anything useful.
+Everything I have learned, from data structures & algorithms to machine learning & robotics, is coded solely from scratch.
 
-## FINISHED
+The bare mininum packages used here are just numerical toolboxes such as PyTorch or Numpy.
 
-Check README.md in each folder for more details about:
+Codes are saved here publicly for my future review. Each package contains a README.md file that describes more details about things inside:
 
 ### Traditional machine learning algorithms
 
@@ -19,8 +19,15 @@ Check README.md in each folder for more details about:
 ### Deep learning
 
 - [x] Fully-connected network
-- [ ] Convolutional network
+- [x] Convolutional network
 - [ ] Long short-term memory
 - [ ] Transformer
+
+### Statistical Signal Processing (SSP)
+
+- [ ] Estimators
+- [ ] Filters
+- [ ] Hypothesis testing & classical inference algorithms
+- [ ] Optimizers
 
 ## TODO

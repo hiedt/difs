@@ -1,4 +1,0 @@
-['remote "origin"']
-    url = https://dagshub.com/HieuDaoTrung/difs.dvc
-['remote "s3"']
-    url = s3://difs/dvc_mlflow/
