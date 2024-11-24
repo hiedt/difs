@@ -10,5 +10,9 @@
 # Logs
 **/*logs
 
+# Cache
+**/*.slxc
+slprj/
+
 # Environment caching
 .vscode
