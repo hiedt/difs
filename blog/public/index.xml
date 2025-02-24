@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hiedt</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Hiedt</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/about_me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/about_me/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
+&lt;h2 id=&#34;nothing-special&#34;&gt;Nothing special&lt;/h2&gt;
+&lt;p&gt;I am just a broke DIY (do-it-yourself) enthusiast.&lt;/p&gt;
+&lt;p&gt;After receiving my Mechatronic Engineering degrees: BEng from VNU-HCM (Vietnam) and MSc from SDU (Denmark), I became a software developer for the wind energy sector. Regardless of straight-A grades and a &amp;ldquo;cum laude&amp;rdquo; status, I still suck! For real, I graduated without knowing how to wire a stepper motor. This was because high-quality textbooks were too expensive, experimental equipment was limited, zero connections with the local industry, bad teachers, and lazy self. Sounds familiar? I know you, brothers. We all once were students.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/statistical-signal-processing/linear_regression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/statistical-signal-processing/linear_regression/</guid>
+      <description>&lt;h1 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. It is widely used for predictive analysis and understanding the strength of relationships between variables.&lt;/p&gt;
+&lt;h2 id=&#34;simple-linear-regression&#34;&gt;Simple Linear Regression&lt;/h2&gt;
+&lt;p&gt;Simple linear regression involves a single independent variable. The relationship between the dependent variable (Y) and the independent variable (X) is modeled by a linear equation:&lt;/p&gt;
+&lt;p&gt;$$
+Y = \beta_0 + \beta_1X + \epsilon
+$$&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
