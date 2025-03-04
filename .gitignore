@@ -5,7 +5,11 @@
 **/*.xls
 **/*.xlsx
 **/data
+!study_control_system_with_python/data
+
+# Build artifacts
 **/checkpoints
+**/*build
 
 # Logs
 **/*logs

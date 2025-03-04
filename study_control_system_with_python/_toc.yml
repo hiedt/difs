@@ -1,0 +1,21 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: content/intro
+parts:
+  - caption: About Dynamical Systems
+    chapters:
+      - file: content/about_dynamical_systems.md
+  - caption: Classical Control Methods
+    chapters:
+      - file: content/notebooks
+  - caption: Switch Systems
+    chapters:
+      - file: content/about_me
+  - caption: Fault Tolerant Systems  
+    chapters:
+      - file: content/markdown-notebooks
+  - caption: Signal Processing
+    chapters:
+      - file: content/markdown

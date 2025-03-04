@@ -1,0 +1,17 @@
+name: difs
+channels:
+  - conda-forge
+dependencies:
+  # Core packages
+  - python=3.12.*
+  - jupyterlab
+  - matplotlib
+  - control # incl. Numpy & Scipy
+  # Documentation
+  - jupyter-book # incl. Sphinx
+  # Add 3rd-party Sphinx extensions
+  - pip:
+    - sphinx-inline_tabs
+    - sphinx-proof
+    - sphinx-examples
+    - sphinx-hoverxref
