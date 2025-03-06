@@ -1,3 +1,7 @@
 jupyter-book
 matplotlib
 numpy
+sphinx-inline_tabs
+sphinx-proof
+sphinx-examples
+sphinx-hoverxref
