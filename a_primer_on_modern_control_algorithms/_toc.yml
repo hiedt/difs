@@ -4,18 +4,18 @@
 format: jb-book
 root: content/intro
 parts:
-  - caption: About Dynamical Systems
+  # - caption: FAQ
+  #   chapters:
+  #     # - file: content/intro
+  #     - file: content/contribution_guide
+  - caption: Dynamical Systems
     chapters:
-      - file: content/about_dynamical_systems.md
-  - caption: Classical Control Methods
+      - file: content/about_dynamical_systems
+      - file: content/sys_lti
+  - caption: Fault-tolerant Control
     chapters:
-      - file: content/notebooks
-  - caption: Switch Systems
-    chapters:
-      - file: content/about_me
-  - caption: Fault Tolerant Systems  
-    chapters:
-      - file: content/markdown-notebooks
+      - file: content/ftc_fundamentals
+      - file: content/parity_method
   - caption: Signal Processing
     chapters:
-      - file: content/markdown
+      - file: content/least_squared_error
