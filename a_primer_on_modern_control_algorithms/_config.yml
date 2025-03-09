@@ -35,6 +35,7 @@ html:
 # Sphinx config to host on ReadTheDocs
 sphinx:
   config:
+    # html_theme: "bookplus" #TODO: to create in <book_name>/themes/bookplus
     intersphinx_mapping:
       ebp:
         - "https://executablebooks.org/en/latest/"
@@ -73,3 +74,4 @@ sphinx:
     - sphinx_proof
     - sphinx_examples
     - hoverxref.extension
+    # - sphinx_xref_graph #TODO: an extension explicitly used with bookplus
