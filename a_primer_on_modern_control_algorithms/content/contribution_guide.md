@@ -16,13 +16,30 @@ That list makes our concern clear enough for Google Gemini to suggest this singl
 A common alternative is either [Voila](https://github.com/voila-dashboards/voila) or [Quarto](https://quarto.org/) being served on GitHub Pages. Although they provide more flexibility with vast customization, I find them quite advanced for newbies. I prefer writing content to debugging tools.
 
 ## Development Environment Setup
+<!-- This section should not be opened to everyone. I will relocate it to GitHub Wiki soon. -->
+Make a Python environment using either `pip`, `conda` or `mamba`. I use `mamba` mostly, sometimes `pip` if a package is only available on PyPI.
 
-1. Make a Python environment using `conda` or `mamba`
-2. (optional) As Sphinx is installed by default as a dependency of `jupyter-book`, we only need to install some third-party extensions.
-3. Restructure the book folder by modifying `_config.yml` and `_toc.yml`.
-4. (optional) Extract Sphinx `config.py` for finer settings. Go to step 5b, then.
-5. (a) Build with `jupyter-book` CLI.
-(b) Build with `sphinx-build` CLI.
+  ```bash
+  mamba create -f dev_env.yaml
+  mamba activate difs
+
+  # To rebuild this blog
+  jupyter-book build a_primer_on_modern_control_algorithms/
+  ```
+
+Jupyter Book is a wrapper of Sphinx, a static-site generator written in Python. The following sub-sections provide tutorial links from which contributors can develop custom themes, build processes, or more advanced features.
+
+### Build a Sphinx Extension
+
+Please follow [this tutorial](https://www.sphinx-doc.org/en/master/development/tutorials/extending_syntax.html#tutorial-extending-syntax).
+
+### Customize Sphinx Theme
+
+Please follow [this tutorial](https://www.sphinx-doc.org/en/master/development/html_themes/index.html).
+
+### Customize Sphinx Build Process
+
+Please follow [this tutorial](https://www.sphinx-doc.org/en/master/extdev/index.html#build-phases).
 
 ## Suggest Errata
 

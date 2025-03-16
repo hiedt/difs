@@ -23,11 +23,34 @@ First and foremost, our future selves when we need to resharpen our skills on th
 
 ## To Use This Blog Effectively
 
-This blog does not have any numbered chapters. Instead, it is organized as a Wiki-like knowledge base. Readers start by searching a keyword, e.g., "observability" to open a relevant page, then navigate to related topics using the graph view in the bottom-right corner.
+This blog does not have any numbered chapters. Instead, it is organized as a Wiki-like knowledge base. Readers start by searching a keyword, e.g., "observability" to open a relevant page, then expand to related topics using the graph view in the bottom-right corner.
 
-Each page starts with preliminary knowledge and ends with basic exercises. Answers can be found in [my GitHub repository](https://github.com/hiedt/difs/tree/master/apomca_sol).
+Each page starts with a list of preliminary knowledge and ends with basic exercises. Answers can be found in [my GitHub](https://github.com/hiedt/difs/tree/master/apomca_sol). We encourage you to {ref}`make a learning environment <rep_guide>`, peruse our lectures & reproduce the results, then write your own solutions before watching ours.
 
-## To Reproduce Code Results
+(rep_guide)=
+
+## Try Solving the Exercises by Yourself
+
+1. Open a terminal (e.g., Windows Command Prompt or Powershell), install Python & one package mananger such as `pip`, `conda`, or `mamba`. For simplicity, I will use `pip` here.
+2. Clone & open this repository
+
+  ```bash
+  git clone https://github.com/hiedt/difs
+  ```
+
+3. Installed required packages
+
+  ```bash
+  pip install -r a_primer_on_modern_control_algorithms/requirements.txt
+  ```
+
+4. *(Optional)* Open a notebook editor, i.e., Jupyter Lab, and start coding
+
+  ```bash
+  jupyter lab
+  ```
+
+Happy learning. 🥳
 
 ```{include} contribution_guide.md
 ```
