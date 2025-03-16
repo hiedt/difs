@@ -48,7 +48,7 @@ $$
 
 1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault).
 2. After a long time of heavy operation, intense vibration (model uncertainty) cracks the gear box (actuator fault).
-3. A household temperature sensor shows 30\circ C while it is dead-cold indoor. This might either be noise or fault, nobody knows.
+3. A household temperature sensor shows $30^\circ C$ while it is dead-cold indoor. This might either be noise or fault, nobody knows.
 
 In {ref}`detectability`, we will see when it is possible to point out faults from disturbances/noises or not.
 
