@@ -16,6 +16,7 @@ parts:
     chapters:
       - file: content/ftc_fundamentals
       - file: content/parity_method
+      - file: content/mrac
   - caption: Signal Processing
     chapters:
       - file: content/least_squared_error
