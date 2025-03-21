@@ -81,4 +81,5 @@ sphinx:
     - sphinx_proof
     - sphinx_examples
     - hoverxref.extension
+    - sphinx_design
     # - sphinx_xref_graph #TODO: an extension explicitly used with bookplus
