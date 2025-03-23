@@ -1,16 +1,36 @@
 # Fundamentals of Fault-tolerant Control (FTC)
 
-In the realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a resilient system which can maintain its stability and performance even when unexpected disruptions like component failures occur. Such resilience is fundamental in safety-critical applications such as aviation, aerospace, medical equipment, etc., where downtime or errors create severe consequences. We can achieve this by following these four steps: enable redundancy, detect error, incorporate a recovery mechanism, then assess the overall integration.
+In the realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a resilient system which can maintain its stability and performance even when unexpected disruptions like component errors occur. Such resilience is fundamental in safety-critical applications such as aviation, aerospace, medical equipment, etc., where downtime or failures create severe consequences. We can achieve this by following these four steps:
+
+1. Enable redundancy
+2. Diagnose the problem
+3. Construct a recovery mechanism
+4. Finally, assess the overall integration
 
 ```{Note}
-We are **not** concerned about why or how a fault happens. There exists many methods to answer it such as Failure Mode & Effect Analysis (FMEA), which belong to another study field. Here, we will in fact check 'where' they are, then 'how to resolve' them.
+We are **not** concerned about why or how a fault happens. There exists many methods which belong to another study field to answer those questions. Here, we focus on where they are as well as how to resolve them.
 ```
 
 ## Definitions
 
-### Fault vs. Other Factors
+### Fault vs. Failure
 
-*A fault*, in a generic sense, is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. Most systems can provide service only when all of their components work as they are designed for. Thus, a fault in one single component may corrupt the whole.
+Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant. For example:
+
+1. Dust covering an optical counter, yielding the miscalculation of passing objects (Fig. {numref}`fig:senfor-fault-1`).
+2. Slower flow through a pipe due to clogging calcium stains from hard water (Fig. {numref}`fig:actu-fault-1`).
+
+In reality, most systems can provide service only when all of their components collaborate as they are designed for. Thus, when a fault comes, our controller must be able to workaround it, so that they--as a whole remains operational. Otherwise, the system would be shut down completely. This inability to recover to a functional state is *a failure*.
+
+```{tip}
+Fault-tolerant control has to prevent a fault (component level) from causing a failure (system level).
+```
+
+```{figure} ../assets/hardwater.png
+
+```
+
+### Fault vs. Other Factors
 
 This definition is, though OK to say, not good enough because *a noise*, *a disturbance* and *model uncertainty* also yield same effects. Let's distinguish them by examining a simple {ref}`LTI system <lti>` controlled by a full-state feedback regulator.
 
@@ -44,15 +64,13 @@ $$
   - Bad design by wrong assumptions of maker/user
 ```
 
-{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In reality, they might be identical, correlated, or causal of each other. For example:
+{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In reality, they might be identical, correlated, or causal of each other. For example:3
 
-1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault).
+1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault), causing the befamous crash of [Air France AF447](https://en.wikipedia.org/wiki/Air_France_Flight_447) (failure).
 2. After a long time of heavy operation, intense vibration (model uncertainty) cracks the gear box (actuator fault).
 3. A household temperature sensor shows $30^\circ C$ while it is dead-cold indoor. This might either be noise or fault, nobody knows.
 
 In {ref}`detectability`, we will see when it is possible to point out faults from disturbances/noises or not.
-
-### Redundancy
 
 (detectability)=
 
@@ -70,6 +88,10 @@ This metric indicates if we can detect a fault and how reliable our detection is
 \end{align*}
 ```
 
-```{hint}
+```{tip}
 By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ in equation {eq}`uio`, we can also call a disturbance an *unknown input*.
 ```
+
+### Redundancy
+
+Redundancy refers to.
