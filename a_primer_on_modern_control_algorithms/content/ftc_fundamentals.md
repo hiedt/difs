@@ -11,14 +11,12 @@ In the realm of increasingly complex systems, the imperative for uninterrupted o
 We are **not** concerned about why or how a fault happens. There exists many methods which belong to another study field to answer those questions. Here, we focus on where they are as well as how to resolve them.
 ```
 
-## Definitions
-
-### Fault vs. Failure
+## Fault vs. Failure
 
 Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant. For example:
 
-1. Dust covering an optical counter, yielding the miscalculation of passing objects (Fig. {numref}`fig:senfor-fault-1`).
-2. Slower flow through a pipe due to clogging calcium stains from hard water (Fig. {numref}`fig:actu-fault-1`).
+1. Slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`actuator_fault`)
+2. Dust covering an optical counter, yielding the miscalculation of passing objects. ({numref}`sensor_fault`)
 
 In reality, most systems can provide service only when all of their components collaborate as they are designed for. Thus, when a fault comes, our controller must be able to workaround it, so that they--as a whole remains operational. Otherwise, the system would be shut down completely. This inability to recover to a functional state is *a failure*.
 
@@ -26,11 +24,25 @@ In reality, most systems can provide service only when all of their components c
 Fault-tolerant control has to prevent a fault (component level) from causing a failure (system level).
 ```
 
-```{figure} ../assets/hardwater.png
+``````{list-table}
+:header-rows: 1
+:name: common_faults
 
-```
+* - Actuator fault
+  - Sensor fault
+* - ```{figure} ../assets/hardwater.png
+    :name: actuator_fault
 
-### Fault vs. Other Factors
+    Clogged pipe
+    ```
+  - ```{figure} ../assets/hardwater.png
+    :name: sensor_fault
+
+    Dirty sensors
+    ```
+``````
+
+## Fault vs. Other Factors
 
 This definition is, though OK to say, not good enough because *a noise*, *a disturbance* and *model uncertainty* also yield same effects. Let's distinguish them by examining a simple {ref}`LTI system <lti>` controlled by a full-state feedback regulator.
 
@@ -74,7 +86,7 @@ In {ref}`detectability`, we will see when it is possible to point out faults fro
 
 (detectability)=
 
-### Detectability
+## Detectability
 
 This metric indicates if we can detect a fault and how reliable our detection is.
 
@@ -92,6 +104,13 @@ This metric indicates if we can detect a fault and how reliable our detection is
 By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ in equation {eq}`uio`, we can also call a disturbance an *unknown input*.
 ```
 
-### Redundancy
+## Redundancy
 
 Redundancy refers to.
+
+### Physical Redundancy
+
+Why is there no indentation for 3rd level headings?
+
+### Analytical Redundancy
+Why is there no indentation for 3rd level headings?
