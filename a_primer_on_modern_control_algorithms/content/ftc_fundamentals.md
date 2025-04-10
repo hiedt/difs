@@ -13,10 +13,7 @@ We are **not** concerned about why or how a fault happens. There exists many met
 
 ## Fault vs. Failure
 
-Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant. For example:
-
-1. Slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`actuator_fault`)
-2. Dust covering an optical counter, yielding the miscalculation of passing objects. ({numref}`sensor_fault`)
+Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant, e.g., slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`actuator_fault`).
 
 In reality, most systems can provide service only when all of their components collaborate as they are designed for. Thus, when a fault comes, our controller must be able to workaround it, so that they--as a whole remains operational. Otherwise, the system would be shut down completely. This inability to recover to a functional state is *a failure*.
 
@@ -35,10 +32,10 @@ Fault-tolerant control has to prevent a fault (component level) from causing a f
 
     Clogged pipe
     ```
-  - ```{figure} ../assets/hardwater.png
+  - ```{figure} ../assets/frozen_pitot.png
     :name: sensor_fault
 
-    Dirty sensors
+    Frozen pitot tube
     ```
 ``````
 
@@ -76,9 +73,9 @@ $$
   - Bad design by wrong assumptions of maker/user
 ```
 
-{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In reality, they might be identical, correlated, or causal of each other. For example:3
+{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In reality, they might be identical, correlated, or causal of each other. For example:
 
-1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault), causing the befamous crash of [Air France AF447](https://en.wikipedia.org/wiki/Air_France_Flight_447) (failure).
+1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault, {numref}`sensor_fault`), causing the befamous crash of [Air France AF447](https://en.wikipedia.org/wiki/Air_France_Flight_447) (failure).
 2. After a long time of heavy operation, intense vibration (model uncertainty) cracks the gear box (actuator fault).
 3. A household temperature sensor shows $30^\circ C$ while it is dead-cold indoor. This might either be noise or fault, nobody knows.
 
