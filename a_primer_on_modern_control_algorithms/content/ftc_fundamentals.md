@@ -13,22 +13,16 @@ We are **not** concerned about why or how a fault happens. There exists many met
 
 ## Fault vs. Failure
 
-Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant, e.g., slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`actuator_fault`).
-
-In reality, most systems can provide service only when all of their components collaborate as they are designed for. Thus, when a fault comes, our controller must be able to workaround it, so that they--as a whole remains operational. Otherwise, the system would be shut down completely. This inability to recover to a functional state is *a failure*.
-
-```{tip}
-Fault-tolerant control has to prevent a fault (component level) from causing a failure (system level).
-```
+Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant, e.g., slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`plant_fault`). Despite some linguistic nuances, let us use *fault* and *component error* synonymously. Do not mistake *component error* with *measurement error* $e = \hat{x} - x$.
 
 ``````{list-table}
 :header-rows: 1
 :name: common_faults
 
-* - Actuator fault
+* - Plant fault
   - Sensor fault
 * - ```{figure} ../assets/hardwater.png
-    :name: actuator_fault
+    :name: plant_fault
 
     Clogged pipe
     ```
@@ -39,9 +33,22 @@ Fault-tolerant control has to prevent a fault (component level) from causing a f
     ```
 ``````
 
+Most systems can provide service only when all of their components collaborate as they are designed for ({numref}`op_regions`, green zone). Thus, when a fault comes, our controller must be able to workaround it, so that they as a whole remain fairly operational (orange zone) or even better, return to normal conditions. Otherwise, the system would become entirely dysfunctional (red zone). The state in which our system does not work or work with unacceptable performance, and our controller cannot get it back to work is *a failure*.
+
+```{figure} ../assets/op_region.svg
+:alt: op_regions
+:name: op_regions
+
+Operation modes of a system
+```
+
+```{tip}
+Fault-tolerant control has to recover a fault (component level) and prevent it from causing a failure (system level).
+```
+
 ## Fault vs. Other Factors
 
-This definition is, though OK to say, not good enough because *a noise*, *a disturbance* and *model uncertainty* also yield same effects. Let's distinguish them by examining a simple {ref}`LTI system <lti>` controlled by a full-state feedback regulator.
+Besides faults, *a noise*, *a disturbance* and *model uncertainty* also yield similar effects. Let's distinguish them by examining a simple {ref}`LTI system <lti>` controlled by a full-state feedback regulator.
 
 $$
 \begin{align*}
@@ -67,13 +74,17 @@ $$
   - Only in sensors (vector $e$)
   - Only in plant (matrices $A, B$)
   - In plant and use case ($A, B, r$)
-* - Caused by unknown reasons
+* - Caused by any reason, even by noise and disturbance
   - Caused by environment
   - Caused by environment
-  - Bad design by wrong assumptions of maker/user
+  - Poor design by engineers
+* - Controller **should workaround** fault
+  - Noise must be handled **by filters, not controllers**
+  - Controller **must eliminate** disturbance
+  - Engineers **must consider** model uncertainty during controller design
 ```
 
-{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In reality, they might be identical, correlated, or causal of each other. For example:
+{numref}`fault_vs_others` is just a relative guideline, not a definite truth. In fact, they might be identical, correlated, or causal of each other. For example:
 
 1. When the ambient temperature becomes too cold (disturbance), an airplane's Pitot tube gets frozen (sensor fault, {numref}`sensor_fault`), causing the befamous crash of [Air France AF447](https://en.wikipedia.org/wiki/Air_France_Flight_447) (failure).
 2. After a long time of heavy operation, intense vibration (model uncertainty) cracks the gear box (actuator fault).
@@ -111,3 +122,7 @@ Why is there no indentation for 3rd level headings?
 
 ### Analytical Redundancy
 Why is there no indentation for 3rd level headings?
+
+## Fault-tolerant Systems
+
+Redundancy is a fundamental component in a fault-tolerant system.
