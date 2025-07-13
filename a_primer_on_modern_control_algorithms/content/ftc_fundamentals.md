@@ -1,19 +1,14 @@
-# Fundamentals of Fault-tolerant Control (FTC)
+# Fundamental Concepts of Fault-tolerant Control
 
-In the realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a resilient system which can maintain its stability and performance even when unexpected disruptions like component errors occur. Such resilience is fundamental in safety-critical applications such as aviation, aerospace, medical equipment, etc., where downtime or failures create severe consequences. We can achieve this by following these four steps:
-
-1. Enable redundancy
-2. Diagnose the problem
-3. Construct a recovery mechanism
-4. Finally, assess the overall integration
+In a modern realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a robust system which can maintain its stability and performance even when unexpected faults occur. Such resilience is a cornerstone of safety-critical applications in aviation, aerospace, medical equipment, wind turbines, etc., where one small defect can create severe consequences.
 
 ```{Note}
-We are **not** concerned about why or how a fault happens. There exists many methods which belong to another study field to answer those questions. Here, we focus on where they are as well as how to resolve them.
+We do **not** concern about why/how a fault happens nor its propagation effects. There exist many tools belonging to the System Engineering field to answer those questions. Here, we only focus on finding where they are and how to resolve them.
 ```
 
-## Fault vs. Failure
+## What is a fault?
 
-Generally speaking, *a fault* is something that surprisingly changes a system's usual behavior, making it no longer satisfy the desired outcome. It can happen at the sensor, actuator, or plant, e.g., slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`plant_fault`). Despite some linguistic nuances, let us use *fault* and *component error* synonymously. Do not mistake *component error* with *measurement error* $e = \hat{x} - x$.
+Generally speaking, *a fault* is something wrong that surprisingly changes a system's usual behavior, hence unsatisfactory outcome. It can happen at the sensor, actuator, or plant, e.g., slower flow through a pipe due to clogging calcium stains from hard water. ({numref}`plant_fault`).
 
 ``````{list-table}
 :header-rows: 1
@@ -33,20 +28,41 @@ Generally speaking, *a fault* is something that surprisingly changes a system's 
     ```
 ``````
 
-Most systems can provide service only when all of their components collaborate as they are designed for ({numref}`op_regions`, green zone). Thus, when a fault comes, our controller must be able to workaround it, so that they as a whole remain fairly operational (orange zone) or even better, return to normal conditions. Otherwise, the system would become entirely dysfunctional (red zone). The state in which our system does not work or work with unacceptable performance, and our controller cannot get it back to work is *a failure*.
+### Fault vs. Error
+
+Despite some linguistic nuances, let us use *fault* and *component error* synonymously in this blog. Please, do not mistake *component error* with *measurement error* $e = \hat{x} - x$.
+
+### Fault vs. Failure vs. Danger
+
+Most systems can only work when all components collaborate smooothly as they are designed for ({numref}`op_regions`, green zone). This is also the region in which a system should remain throughout most of its lifetime. When a fault appears, its performance degrades, but still within an acceptable level (orange zone). If this fault is not addressed timely, the system may become entirely dysfunctional aka. *failure* (red zone). Any degradation beyond this red line causes damage to machine, environment, and human aka. *danger* (white zone).
 
 ```{figure} ../assets/op_region.svg
 :alt: op_regions
 :name: op_regions
 
-Operation modes of a system
+Performance space of a (faulty) system
 ```
+
+### Fault Tolerance vs. Safety
+
+Fault tolerance is an ability to work fine under faults. In other words, a fault-tolerant controller must be able to:
+
+- cover a fault (component level) by bringing an orange state back to green, or at least remain there.
+- prevent a fault from causing a failure (system level).
+- prevent a failure from causing a danger (eco-system level).
+
+Safety refers to the absence of danger. If the controller cannot maintain a safe status, i.e., system performance crosses the red line, another entity called *a safety system*:
+
+- is implemented as a separate part, hardware and software-wise.
+- shuts down a failing machine's operation, or at least keeps it within the safe zone.
+
+As they are complementary and equally important, you can usually find both in most industrial settings. This partition allows fault-tolerant control development to be free from most safety standard compliance.
 
 ```{tip}
-Fault-tolerant control has to recover a fault (component level) and prevent it from causing a failure (system level).
+Safety and safety system are not discussed further in this blog.
 ```
 
-## Fault vs. Other Factors
+### Fault vs. Other Factors
 
 Besides faults, *a noise*, *a disturbance* and *model uncertainty* also yield similar effects. Let's distinguish them by examining a simple {ref}`LTI system <lti>` controlled by a full-state feedback regulator.
 
@@ -90,11 +106,22 @@ $$
 2. After a long time of heavy operation, intense vibration (model uncertainty) cracks the gear box (actuator fault).
 3. A household temperature sensor shows $30^\circ C$ while it is dead-cold indoor. This might either be noise or fault, nobody knows.
 
-In {ref}`detectability`, we will see when it is possible to point out faults from disturbances/noises or not.
+In {ref}`detectability`, we will see when it is possible to distinguish faults from noise/disturbance.
+
+## Components of a Fault-tolerant System
+
+### Redundancy
+
+Redundancy refers to.
+
+### Decision Maker (Agent)
+
+### Recovery Mechanism
+
+## Characteristics of a Fault-tolerant System
 
 (detectability)=
-
-## Detectability
+### Detectability
 
 This metric indicates if we can detect a fault and how reliable our detection is.
 
@@ -112,17 +139,4 @@ This metric indicates if we can detect a fault and how reliable our detection is
 By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ in equation {eq}`uio`, we can also call a disturbance an *unknown input*.
 ```
 
-## Redundancy
-
-Redundancy refers to.
-
-### Physical Redundancy
-
-Why is there no indentation for 3rd level headings?
-
-### Analytical Redundancy
-Why is there no indentation for 3rd level headings?
-
-## Fault-tolerant Systems
-
-Redundancy is a fundamental component in a fault-tolerant system.
+### Reliability
