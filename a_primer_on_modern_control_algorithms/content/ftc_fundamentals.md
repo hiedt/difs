@@ -110,11 +110,49 @@ In {ref}`detectability`, we will see when it is possible to distinguish faults f
 
 ## Components of a Fault-tolerant System
 
+You may have recognized what the operation layer in {numref}`ftc_layers` is—just a conventional block diagram for every control system. In order to tackle a faulty situation, a supervision layer is added by following a four-step framework:
+
+1. Enable redundancy
+2. Diagnose faults
+3. Employ a recovery mechanism
+4. Assess final performance
+
+```{figure} ../assets/ftc_layers.svg
+:alt: ftc_layers
+:name: ftc_layers
+
+Basic architecture of a fault-tolerant system
+```
+
 ### Redundancy
 
-Redundancy refers to.
+> Redundant (adjective)
+>
+> 3: serving as a duplicate for preventing failure of an entire system (such as a spacecraft) upon failure of a single component.
+>
+> -- Merriam-Webster dictionary
 
-### Decision Maker (Agent)
+Replacing a defected device during maintenance is easy but during operation is always infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is faulty, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
+
+A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*. This extra information allows estimation of the nominal state under faulty conditions, resulting timely diagnosis and correction.
+
+```{important}
+Redundancy is a must-have component in every fault-tolerant system. This is obviously true-by-definition.
+```
+
+### Diagnosis Module
+
+This module is mostly a software function that utilizes the analytical redundancy, actual control command $u$, and measured output $y$ to do:
+
+- fault detection: when does a fault occur?
+- fault isolation: where is it?
+- fault estimation: what is its magnitude?
+
+{numref}`ftc_layers` implies an online estimator, i.e., diagnosis is done in real-time using same signals as the main controller during operation. In fact, we only provide online methods across this blog.
+
+```{tip}
+Each task has several algorithms that are described in separate pages. You can find them via tags `faultdetection`, `faultisolation`, and `faultestimation`.
+```
 
 ### Recovery Mechanism
 
