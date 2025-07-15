@@ -2,8 +2,15 @@
 
 In a modern realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a robust system which can maintain its stability and performance even when unexpected faults occur. Such resilience is a cornerstone of safety-critical applications in aviation, aerospace, medical equipment, wind turbines, etc., where one small defect can create severe consequences.
 
-```{Note}
-We do **not** concern about why/how a fault happens nor its propagation effects. There exist many tools belonging to the System Engineering field to answer those questions. Here, we only focus on finding where they are and how to resolve them.
+```{admonition} Scope of Work
+We do **not** concern about:
+- how a fault happens,
+- or its propagation effects,
+- or how to fix it.
+
+Other study fields like System Engineering provide tools to answer those questions. Here, we rather focus on:
+- finding where faults are
+- and how to <u>workaround</u> them, i.e., they may persist.
 ```
 
 ## What is a fault?
