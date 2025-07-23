@@ -10,15 +10,17 @@ parts:
   #     - file: content/contribution_guide
   - caption: Dynamical Systems
     chapters:
-      - file: content/about_dynamical_systems
-      - file: content/sys_lti
+      - file: content/dynamical_systems/about_dynamical_systems
+      - file: content/dynamical_systems/sys_lti
   - caption: Fault-tolerant Control
     chapters:
-      - file: content/ftc_fundamentals
-      - file: content/consistency_princip
-      - file: content/ftc_example_systems
-      - file: content/parity_method
-      - file: content/mrac
-  - caption: Signal Processing
+      - file: content/fault_tolerant_control/ftc_fundamentals
+      - file: content/fault_tolerant_control/consistency_princip
+      - file: content/fault_tolerant_control/ftc_example_systems
+      - file: content/fault_tolerant_control/parity_method
+  - caption: Statistical Signal Processing
     chapters:
-      - file: content/least_squared_error
+      - file: content/statistical_signal_processing/least_squared_error
+  - caption: Adaptive Control
+    chapters:
+      - file: content/adaptive_control/mrac
