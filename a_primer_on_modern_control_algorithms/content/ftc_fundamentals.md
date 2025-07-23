@@ -141,7 +141,7 @@ Basic architecture of a fault-tolerant system
 
 Replacing a defected device during maintenance is easy but during operation is always infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is faulty, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
 
-A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*, to estimate the nominal state even when faults occur, resulting timely diagnosis and correction. In reality, engineers sometimes [combine both types](./ftc_example_systems.md#ftc_twotank) to cover a wider range of issues.
+A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*, to estimate the nominal state even when faults occur, resulting timely diagnosis and correction. In reality, engineers sometimes [combine both types](#ftc_twotank) to cover a wider range of issues.
 
 ```{important}
 It is true-by-definition that redundancy is fundamental in every fault-tolerant system.
@@ -159,7 +159,7 @@ This module is mostly a software function that utilizes the analytical redundanc
 Each task has several algorithms that can be found via tags `faultdetection`, `faultisolation`, or `faultestimation`.
 ```
 
-By using a block diagram, {numref}`ftc_layers` implies an online manner, i.e., diagnosis is done in real-time alongside operation of the main controller. Offline methods, on the other hand, are applied on recorded data. Another discriminative factor is that online methods always obey [the principle of consistency](./consistency_princip.md), whereas offline ones do not in some cases (@Blanke2016).
+By using a block diagram, {numref}`ftc_layers` implies an online manner, i.e., diagnosis is done in real-time alongside operation of the main controller. Offline methods, on the other hand, are applied on recorded data. Another discriminative factor is that online methods always obey [the principle of consistency](./consistency_princip.md), whereas offline ones do not in some cases {cite:p}`Blanke2016_chap1`.
 
 ```{admonition} Scope of Work
 We only talk about <u>online</u> fault-diagnosis algorithms in this blog.
@@ -189,3 +189,6 @@ By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ i
 ```
 
 ### Reliability
+
+```{bibliography}
+```
