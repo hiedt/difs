@@ -23,12 +23,12 @@ Generally speaking, *a fault* is something wrong that surprisingly changes a sys
 
 * - Plant fault
   - Sensor fault
-* - ```{figure} ../assets/hardwater.png
+* - ```{figure} ../../assets/hardwater.png
     :name: plant_fault
 
     Clogged pipe
     ```
-  - ```{figure} ../assets/frozen_pitot.png
+  - ```{figure} ../../assets/frozen_pitot.png
     :name: sensor_fault
 
     Frozen pitot tube
@@ -43,7 +43,7 @@ Despite some linguistic nuances, let us use *fault* and *component error* synony
 
 Most systems can only work when all components collaborate smooothly as they are designed for ({numref}`op_regions`, green zone). This is also the region in which a system should remain throughout most of its lifetime. When a fault appears, its performance degrades, but still within an acceptable level (orange zone). If this fault is not addressed timely, the system may become entirely dysfunctional aka. *failure* (red zone). Any degradation beyond this red line causes damage to machine, environment, and human aka. *danger* (white zone).
 
-```{figure} ../assets/op_region.svg
+```{figure} ../../assets/op_region.svg
 :alt: op_regions
 :name: op_regions
 
@@ -124,7 +124,7 @@ You may have recognized what the operation layer in {numref}`ftc_layers` is—ju
 3. Employ a recovery mechanism
 4. Assess final performance
 
-```{figure} ../assets/ftc_layers.svg
+```{figure} ../../assets/ftc_layers.svg
 :alt: ftc_layers
 :name: ftc_layers
 
@@ -191,4 +191,5 @@ By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ i
 ### Reliability
 
 ```{bibliography}
+:style: unsrt
 ```
