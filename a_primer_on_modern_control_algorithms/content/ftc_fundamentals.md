@@ -63,10 +63,10 @@ Safety refers to the absence of danger. If the controller cannot maintain a safe
 - is implemented as a separate part, hardware and software-wise.
 - shuts down a failing machine's operation, or at least keeps it within the safe zone.
 
-As they are complementary and equally important, you can usually find both in most industrial settings. This partition allows fault-tolerant control development to be free from most safety standard compliance.
+As they are complementary and equally important, you can usually find both in most industrial settings. This partition allows fault-tolerant control development to be free from safety standard compliance.
 
-```{tip}
-Safety and safety system are not discussed further in this blog.
+```{admonition} Scope of Work
+Safety and safety system are <u>not</u> discussed further in this blog.
 ```
 
 ### Fault vs. Other Factors
@@ -117,7 +117,7 @@ In {ref}`detectability`, we will see when it is possible to distinguish faults f
 
 ## Components of a Fault-tolerant System
 
-You may have recognized what the operation layer in {numref}`ftc_layers` is—just a conventional block diagram for every control system. In order to tackle a faulty situation, a supervision layer is added by following a four-step framework:
+You may have recognized what the operation layer in {numref}`ftc_layers` is—just a block diagram for conventional control systems. In order to tackle faulty situations, a supervision layer is added by following these four steps:
 
 1. Enable redundancy
 2. Diagnose faults
@@ -141,10 +141,10 @@ Basic architecture of a fault-tolerant system
 
 Replacing a defected device during maintenance is easy but during operation is always infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is faulty, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
 
-A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*. This extra information allows estimation of the nominal state under faulty conditions, resulting timely diagnosis and correction.
+A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*, to estimate the nominal state even when faults occur, resulting timely diagnosis and correction. In reality, engineers sometimes [combine both types](./ftc_example_systems.md#ftc_twotank) to cover a wider range of issues.
 
 ```{important}
-Redundancy is a must-have component in every fault-tolerant system. This is obviously true-by-definition.
+It is true-by-definition that redundancy is fundamental in every fault-tolerant system.
 ```
 
 ### Diagnosis Module
@@ -155,10 +155,14 @@ This module is mostly a software function that utilizes the analytical redundanc
 - fault isolation: where is it?
 - fault estimation: what is its magnitude?
 
-{numref}`ftc_layers` implies an online estimator, i.e., diagnosis is done in real-time using same signals as the main controller during operation. In fact, we only provide online methods across this blog.
-
 ```{tip}
-Each task has several algorithms that are described in separate pages. You can find them via tags `faultdetection`, `faultisolation`, and `faultestimation`.
+Each task has several algorithms that can be found via tags `faultdetection`, `faultisolation`, or `faultestimation`.
+```
+
+By using a block diagram, {numref}`ftc_layers` implies an online manner, i.e., diagnosis is done in real-time alongside operation of the main controller. Offline methods, on the other hand, are applied on recorded data. Another discriminative factor is that online methods always obey [the principle of consistency](./consistency_princip.md), whereas offline ones do not in some cases (@Blanke2016).
+
+```{admonition} Scope of Work
+We only talk about <u>online</u> fault-diagnosis algorithms in this blog.
 ```
 
 ### Recovery Mechanism
