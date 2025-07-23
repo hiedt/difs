@@ -18,7 +18,7 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - data/references.bib
+  - citations/ref1.bib
 
 # Information about where the book exists on the web
 repository:
@@ -43,6 +43,7 @@ html:
 sphinx:
   config:
     # html_theme: "bookplus" #TODO: to create in <book_name>/themes/bookplus
+    bibtex_reference_style: author_year
     intersphinx_mapping:
       ebp:
         - "https://executablebooks.org/en/latest/"
