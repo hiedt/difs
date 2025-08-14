@@ -39,10 +39,11 @@ html:
 #     # including those that are enabled by default!
 #     - amsmath
 
+only_build_toc_files: true
+
 # Sphinx config to host on ReadTheDocs
 sphinx:
   config:
-    # html_theme: "bookplus" #TODO: to create in <book_name>/themes/bookplus
     bibtex_reference_style: author_year
     intersphinx_mapping:
       ebp:

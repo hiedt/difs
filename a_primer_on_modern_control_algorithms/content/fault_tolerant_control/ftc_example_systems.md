@@ -1,4 +1,6 @@
 # Example Fault-tolerant Systems
 
-(ftc_twotank)=
-## Two-tank System
+This chapter introduces some regular systems that need fault tolerance.
+
+```{tableofcontents}
+```
