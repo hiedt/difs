@@ -17,10 +17,26 @@ parts:
       - file: content/fault_tolerant_control/ftc_fundamentals
       - file: content/fault_tolerant_control/consistency_princip
       - file: content/fault_tolerant_control/ftc_example_systems
+        sections:
+          - file: content/fault_tolerant_control/two_tank
       - file: content/fault_tolerant_control/parity_method
   - caption: Statistical Signal Processing
     chapters:
-      - file: content/statistical_signal_processing/least_squared_error
-  - caption: Adaptive Control
+      - file: content/statistical_signal_processing/parameter_estimation
+        sections:
+          - file: content/statistical_signal_processing/least_squared_error
+          - file: content/statistical_signal_processing/minimum_variance
+          - file: content/statistical_signal_processing/maximum_likelihood
+      - file: content/statistical_signal_processing/sequential_state_estimation
+        sections:
+          - file: content/statistical_signal_processing/maximum_a_priori
+  - caption: Appendix A - Basic Engineering Math
     chapters:
-      - file: content/adaptive_control/mrac
+      - file: content/math_review/prob_stat_review
+        sections:
+          - file: content/math_review/random_variables
+          - file: content/math_review/estimators
+          - file: content/math_review/hypothesis_testing
+  # - caption: Adaptive Control
+  #   chapters:
+  #     - file: content/adaptive_control/mrac

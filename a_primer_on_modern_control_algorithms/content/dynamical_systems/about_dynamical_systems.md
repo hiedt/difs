@@ -52,6 +52,7 @@ Imagine you are driving a car. You have a steering wheel, pedals, and brakes.  Y
 
 **Why is Controllability Important?**  For a control system to be useful, it *must* be controllable in the aspects we care about. We need to be able to steer the system towards our goals.
 
+(observability)=
 ### 3. Observability: Can We "See" What's Happening Inside?
 
 Think about a doctor examining a patient. They can't directly see inside the patient's body without tools, but they can use observations like temperature, heart rate, and blood pressure to *infer* what's going on internally.  **Observability** is about how well we can understand the internal state of a system by looking at its outputs.

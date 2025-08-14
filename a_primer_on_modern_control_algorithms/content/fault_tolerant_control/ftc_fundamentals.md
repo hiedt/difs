@@ -1,3 +1,9 @@
+---
+authors:
+  - name: Hieu Dao Trung
+tags: ftc,fundamental,faulttolerant,control
+---
+
 # Fundamental Concepts of Fault-tolerant Control
 
 In a modern realm of increasingly complex systems, the imperative for uninterrupted operation grows ever more concerning. This part represents methodologies for building a robust system which can maintain its stability and performance even when unexpected faults occur. Such resilience is a cornerstone of safety-critical applications in aviation, aerospace, medical equipment, wind turbines, etc., where one small defect can create severe consequences.
@@ -10,7 +16,7 @@ We do **not** concern about:
 
 Other study fields like System Engineering provide tools to answer those questions. Here, we rather focus on:
 - finding where faults are
-- and how to <u>workaround</u> them, i.e., they may persist.
+- and how to <u>workaround</u> them.
 ```
 
 ## What is a fault?
@@ -121,7 +127,7 @@ You may have recognized what the operation layer in {numref}`ftc_layers` is—ju
 
 1. Enable redundancy
 2. Diagnose faults
-3. Employ a recovery mechanism
+3. Employ a coverage strategy
 4. Assess final performance
 
 ```{figure} ../../assets/ftc_layers.svg
@@ -139,12 +145,12 @@ Basic architecture of a fault-tolerant system
 >
 > -- Merriam-Webster dictionary
 
-Replacing a defected device during maintenance is easy but during operation is always infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is faulty, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
+Replacing a defected device during maintenance is easy but during operation is almost infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is occasionally down, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
 
-A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*, to estimate the nominal state even when faults occur, resulting timely diagnosis and correction. In reality, engineers sometimes [combine both types](#ftc_twotank) to cover a wider range of issues.
+A better solution is to take advantage of the system's mathematical model, aka. *analytical redundancy*, to estimate the nominal state even when faults occur, resulting timely diagnosis and correction. In reality, engineers usually [combine both types](./two_tank.md) to cover a wider range of issues. With the power of [observers](#observability), **not** every critical component needs to have an identical twin. In fact, you will see in many examples that adding one sensor (physical) is sufficient to estimate other components' status (analytical).
 
 ```{important}
-It is true-by-definition that redundancy is fundamental in every fault-tolerant system.
+It is true-by-definition that redundancy is prerequisite in every fault-tolerant system.
 ```
 
 ### Diagnosis Module
@@ -165,7 +171,25 @@ By using a block diagram, {numref}`ftc_layers` implies an online manner, i.e., d
 We only talk about <u>online</u> fault-diagnosis algorithms in this blog.
 ```
 
-### Recovery Mechanism
+### Coverage Strategies
+
+Also known as *control (system) redesign* in many textbooks, this is a decision making process that adapts the control law in order to prolong the system's normal mode despite any error. Given a controller
+
+$$
+u = G(\theta, e)
+$$
+
+in which $\theta$ is the controller parameters, $e = y - y_{ref}$ is the output error, we have two obvious paths to go:
+
+1. *fault accomodation*: update $\theta$
+2. *controller reconfiguration*: replace $G$
+3. *objective reconfiguration*: adjust target $y_{ref}$
+
+The first strategy is similar to PID gain scheduling that one may have learned in their undergraduate course. But if it is unsolvable, i.e., there exists no solution of $\theta$ for maintaining equivalent performance, we have to take the latter routes.
+
+```{tip}
+Remember our target is to "tolerate" faults rather than fixing them. You can find specific methods of both strategies via tags `faultaccommodation` and `controlreconfiguration`. 
+```
 
 ## Characteristics of a Fault-tolerant System
 
@@ -188,7 +212,8 @@ This metric indicates if we can detect a fault and how reliable our detection is
 By encapsulating disturbance vector $d$ into input vector $u' = [u~~d]^{\top}$ in equation {eq}`uio`, we can also call a disturbance an *unknown input*.
 ```
 
-### Reliability
+### Reliability, Availability, and Maintainability (RAM)
+<!-- TODO: write about these 3 properties -->
 
 ```{bibliography}
 :style: unsrt
