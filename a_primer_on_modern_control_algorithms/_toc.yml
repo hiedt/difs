@@ -8,10 +8,10 @@ parts:
   #   chapters:
   #     # - file: content/intro
   #     - file: content/contribution_guide
-  - caption: Dynamical Systems
-    chapters:
-      - file: content/dynamical_systems/about_dynamical_systems
-      - file: content/dynamical_systems/sys_lti
+  # - caption: Dynamical Systems
+  #   chapters:
+  #     - file: content/dynamical_systems/about_dynamical_systems
+  #     - file: content/dynamical_systems/sys_lti
   - caption: Fault-tolerant Control
     chapters:
       - file: content/fault_tolerant_control/ftc_fundamentals
@@ -27,6 +27,7 @@ parts:
           - file: content/statistical_signal_processing/least_squared_error
           - file: content/statistical_signal_processing/minimum_variance
           - file: content/statistical_signal_processing/maximum_likelihood
+          - file: content/statistical_signal_processing/minimum_mean_squared_error
       - file: content/statistical_signal_processing/sequential_state_estimation
         sections:
           - file: content/statistical_signal_processing/maximum_a_priori
@@ -37,6 +38,9 @@ parts:
           - file: content/math_review/random_variables
           - file: content/math_review/estimators
           - file: content/math_review/hypothesis_testing
+  - caption: Optimal Control
+    chapters:
+      - file: content/optimal_control/linear_quadratic_regulator
   # - caption: Adaptive Control
   #   chapters:
   #     - file: content/adaptive_control/mrac
