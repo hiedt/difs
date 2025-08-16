@@ -1,59 +1,46 @@
 # Welcome to APOMCA
 
-In an era functioned by automation and intelligent systems, control theory has become more vital than ever. From precise movements of robotic arms to complex regulation of climate systems, modern control algorithms are the silent architects of our technological world.
+*A Primer On Modern Control Algorithms* is written by a graduate student, hence the pragmatic language that provides easy access to the fascinating domain of control engineering. Whether you are a student, an industrial practitioner, or simply a curious mind with a relevant background, this primer will help you quickly understand core concepts before tutoring your own implementation.
 
-APOMCA, written by a graduate student in a pragmatic language, is designed to be your accessible gateway into this fascinating domain. We aim to demystify core concepts, bridging the gap between theoretical foundations and practical applications without overloading mathematics. Whether you are a student, an industrial practitioner, or simply a curious mind, this primer will equip you with the most fundamental knowledge needed to get contemporary control strategies up running.
-
-```{note}
-Our blog is fully open-source. It is also under active development, so readers are encouraged to examine, leave comments, contribute content, or suggest errata via GitHub issues.
+```{tip}
+My blog is fully open-source and under active development. Readers are encouraged to examine, leave comments, contribute content, or suggest errata via GitHub issues.
 ```
 
 ## Target Audiences
 
-First and foremost, our future selves when we need to resharpen our skills on the following topics. If you share the same interest, then welcome home fellas.
+First and foremost, my future self when I need to sharpen my memory about the following topics:
 
-- Cutting-edge feedback loops:
-  - Optimal control like LQR or MPC
-  - Adaptive control like MRAC
-  - Robust control like sliding mode
-  - Data-driven like reinforcement learning
-- Dynamical system analysis
-- Apply those concepts in Python and MATLAB
-- Execute them on microcontrollers
+- Software for embedded applications
+- Fault-tolerant control
+- Theory of (linear & non-linear) dynamical systems
+- Statistical signal processing
+- Optimal control, with a quick glance through reinforcement learning
+- Robust control
+
+I use mostly materials from my Master's degree in Mechatronics at the University of Southern Denmark back in 2024. Thus, readers should be familiar with basic terms such as:
+
+- Linear time-invariant systems (LTI), tranfer functions, state space
+- Frequency response, Bode plot, Nyquist plot
+- PID, integral windup, pole placement, gain scheduling
+- Linear algebra, probability & statistics, numerical methods (No worries! These math tools will be reviewed in appendices as I don't remember them, either.)
+
+I will do my best to provide enough foundation without copy-pasting too much rigorous math proofs from textbooks.
 
 ## To Use This Blog Effectively
 
-This blog does not have any numbered chapters. Instead, it is organized as a Wiki-like knowledge base. Readers start by searching a keyword, e.g., "observability" to open a relevant page, then expand to related topics using the graph view in the bottom-right corner.
+This blog does not have any numbered chapters. Instead, it is organized as a Wiki-like knowledge base. Readers start by searching a keyword, e.g., "observability" to open a relevant page, then expand to related content via reference links.
 
-Each page starts with a list of preliminary knowledge and ends with basic exercises. Answers can be found in [my GitHub](https://github.com/hiedt/difs/tree/master/apomca_sol). We encourage you to {ref}`make a learning environment <rep_guide>`, peruse our lectures & reproduce the results, then write your own solutions before watching ours.
+Each page starts with a list of preliminary knowledge and ends with basic exercises. Answers can be found in [this repo](https://github.com/hiedt/difs/tree/master/apomca_sol). I encourage you to first peruse the lectures, reproduce the results, then do your own work before watching my solutions.
 
-(rep_guide)=
+<!--TODO: ## To Work by Yourself -->
+<!--TODO: instruction how to run the page on BinderHub -->
 
-## Try Solving the Exercises by Yourself
+## Technology Stack
 
-1. Open a terminal (e.g., Windows Command Prompt or Powershell), install Python & one package mananger such as `pip`, `conda`, or `mamba`. For simplicity, I will use `pip` here.
-2. Clone & open this repository
+The blog is written in MyST Markdown (text) and Julia (code) using [Jupyter Book v1](https://jupyterbook.org/en/stable/intro.html) ([default theme](https://sphinx-book-theme.readthedocs.io/en/stable/sections/sidebar-primary.html)), which is then built and hosted by [ReadtheDocs.io](https://about.readthedocs.com/?ref=app.readthedocs.org). I use VSCode's [extension](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) for most modification, whereas pilot testing is done on [Binder](https://mybinder.org/).
 
-  ```bash
-  git clone https://github.com/hiedt/difs
-  ```
+"Why Julia?"---you ask. Julia is well-designed for scientific computing. It has superb performance, GPU support, one-indexed, first-class arrays, data plotting, etc. natively. Python, on the other hand, is more general-purpose, so you need to install multiple packages like Numpy, SciPy, or Matplotlib. MATLAB...😶!
 
-3. Installed required packages
+## References
 
-  ```bash
-  pip install -r a_primer_on_modern_control_algorithms/requirements.txt
-  ```
-
-4. *(Optional)* Open a notebook editor, i.e., Jupyter Lab, and start coding
-
-  ```bash
-  jupyter lab
-  ```
-
-Happy learning. 🥳
-
-```{include} contribution_guide.md
-```
-
-```{include} about_us.md
-```
+Here are the textbooks I use.

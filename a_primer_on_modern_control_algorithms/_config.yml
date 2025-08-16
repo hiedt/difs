@@ -4,7 +4,7 @@
 title: A Primer On Modern Control Algorithms
 author: Hieu Dao Trung (@hiedt)
 copyright: "2025"
-logo: assets/APOMCAv4_light.png
+logo: assets/APOMCA_jl_light.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
