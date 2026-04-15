@@ -24,7 +24,7 @@ Make a Python environment using either `pip`, `conda` or `mamba`. I use `mamba` 
   mamba activate difs
 
   # To rebuild this blog
-  jupyter-book build a_primer_on_modern_control_algorithms/
+  jupyter-book build apomca/
   ```
 
 Jupyter Book is a wrapper of Sphinx, a static-site generator written in Python. The following sub-sections provide tutorial links from which contributors can develop custom themes, build processes, or more advanced features.

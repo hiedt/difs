@@ -3,7 +3,7 @@
 
 title: A Primer On Modern Control Algorithms
 author: Hieu Dao Trung (@hiedt)
-copyright: "2025"
+copyright: "2024-2026"
 logo: assets/APOMCA_jl_light.png
 
 # Force re-execution of notebooks on each build.
@@ -14,17 +14,17 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: a_primer_on_modern_control_algorithms.tex
+    targetname: apomca.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - citations/ref1.bib
+  - citations/books.bib
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/hiedt/difs  # Online location of your book
-  path_to_book: a_primer_on_modern_control_algorithms  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/hiedt/difs # Online location of your book
+  path_to_book: apomca # Optional path to your book, relative to the repository root
+  branch: master # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -68,7 +68,7 @@ sphinx:
         - "https://sphinx-proof.readthedocs.io/en/latest/"
         - null
     hoverxref_intersphinx:
-     - "sphinxproof"
+      - "sphinxproof"
     mathjax3_config:
       tex:
         macros:
@@ -76,7 +76,7 @@ sphinx:
           "floor": ["\\lfloor#1\\rfloor", 1]
           "bmat": ["\\left[\\begin{array}"]
           "emat": ["\\end{array}\\right]"]
-        
+
   extra_extensions:
     - sphinx.ext.intersphinx
     - sphinx_inline_tabs
