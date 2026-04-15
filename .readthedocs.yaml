@@ -11,11 +11,11 @@ build:
     python: "3.12"
   jobs:
     pre_build:
-      - "jupyter-book config sphinx a_primer_on_modern_control_algorithms/"
+      - "jupyter-book config sphinx apomca/"
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
   builder: html
-  configuration: a_primer_on_modern_control_algorithms/conf.py
+  configuration: apomca/conf.py
   fail_on_warning: false
 
 # Optionally, but recommended,
@@ -23,4 +23,4 @@ sphinx:
 # See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
 python:
   install:
-  - requirements: a_primer_on_modern_control_algorithms/requirements.txt
+    - requirements: apomca/requirements.txt

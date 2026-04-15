@@ -179,7 +179,7 @@ $$
 u = G(\theta, e)
 $$
 
-in which $\theta$ is the controller parameters, $e = y - y_{ref}$ is the output error, we have two obvious paths to go:
+in which $\theta$ is the controller parameters, $e = y - y_{ref}$ is the output error, we have three obvious paths to go:
 
 1. *fault accomodation*: update $\theta$
 2. *controller reconfiguration*: replace $G$
