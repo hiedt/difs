@@ -8,7 +8,7 @@ All machines around our daily lives, from cars to dryers, need to be controlled.
 
 ## Target Audiences
 
-First and foremost, my future self. Then to the students and industry practitioners. Materials are borrowed from my Master's degree in Mechatronics at the University of Southern Denmark back in 2022-2024. Instead of copying rigorous mathematic proofs from textbooks, I choose a pragmatic "given-when-then-like this" style so that anyone can quickly grasp the idea how an algorithm works.
+First and foremost, my future self. Then to the students and industry practitioners. Materials are borrowed from my Master's degree in Mechatronics at the University of Southern Denmark back in 2022-2024. Instead of copying rigorous mathematic proofs from textbooks, I choose a pragmatic "given-when-then-example" style so that anyone can quickly grasp the idea how an algorithm works and when to use it.
 
 ## Blog Structure
 
@@ -30,11 +30,11 @@ This blog does not have any numbered chapters. Instead, it is a Wiki of pages an
   - Reinforcement learning as a controller
 - *and more*
 
+Each page starts with a list of preliminary knowledge and ends with some basic exercises whose [answers can be found here](https://github.com/hiedt/difs/tree/master/apomca_sol).
+
 ## Reader Guide
 
-To use this blog effectively, readers start by searching a keyword, e.g., "observability", for a relevant page, then continue expanding to other topics via reference links.
-
-Each page starts with a list of preliminary knowledge and ends with basic exercises whose [answers can be found here](https://github.com/hiedt/difs/tree/master/apomca_sol).
+To use this blog effectively, readers are advised against sequentially jumping through page by page. It is better to start by searching a keyword, e.g., "observability", for the most relevant entry point, then continue expanding to other topics via reference links. Tags is also an effective way to query. Newbies with zero experience can get started with the easiest application: [balance an inverted pendulum using PID](#pid).
 
 <!--TODO: ## To Work by Yourself -->
 <!--TODO: instruction how to run the page on BinderHub -->

@@ -6,12 +6,16 @@ root: content/intro
 parts:
   # - caption: FAQ
   #   chapters:
-  #     # - file: content/intro
   #     - file: content/contribution_guide
   - caption: Dynamical Systems Modeling
     chapters:
-      - file: content/dynamical_systems/about_dynamical_systems
+      - file: content/dynamical_systems/sys_about
+      - file: content/dynamical_systems/sys_reach_stab
       - file: content/dynamical_systems/sys_lti
+      - file: content/dynamical_systems/sys_ctrl_obs
+  - caption: Traditional Methods
+    chapters:
+      - file: content/traditional_methods/pid
   - caption: Fault-tolerant Control
     chapters:
       - file: content/fault_tolerant_control/ftc_fundamentals
