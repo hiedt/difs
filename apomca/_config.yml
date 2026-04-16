@@ -32,12 +32,11 @@ html:
   use_issues_button: true
   use_repository_button: true
 
-# LaTeX rendering with MathJax
-# parse:
-#   myst_enable_extensions:
-#     # don't forget to list any other extensions you want enabled,
-#     # including those that are enabled by default!
-#     - amsmath
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath # LaTeX rendering using MathJax v2.0
 
 only_build_toc_files: true
 
