@@ -36,7 +36,18 @@ parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
-    - amsmath # LaTeX rendering using MathJax v2.0
+    # - deflist # MyST definition lists
+    - amsmath # LaTeX rendering for amsmath using MathJax v2.0
+    - dollarmath # LaTeX rendering for $ using MathJax v2.0
+    - colon_fence # MyST colon fence for admonitions, code blocks, and figures.
+    # - html_admonition
+    # - html_image
+    # - strikethrough
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
 
 only_build_toc_files: true
 

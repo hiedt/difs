@@ -27,7 +27,5 @@ $$
 Although it has time as a variable, the current value $y(t)$ does not depend on the past $y(t-1)$. It is just an instant mapping from $x$. In other words, we don't need to wait for $y$ to evolve. That is why nobody controls a static system.
 
 :::{note}
-:class: dropdown
-
 Control engineering only deals with dynamical systems. Our target is to drive them from their starting point $x(0)$ to a desired state $x_{ref}$.
 :::
