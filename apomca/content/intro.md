@@ -1,8 +1,10 @@
 # Welcome to APOMCA
 
-```{attention} DISCLAIMER
+:::{admonition} DISCLAIMER
+:class: attention
+
 The code found in this blog is intended for pedagogical purposes, DO NOT use them in production. My blog is under active development, so readers are encouraged to examine, leave comments, contribute content, or suggest errata via GitHub issues.
-```
+:::
 
 All machines around our daily lives, from cars to dryers, need to be controlled. Thus, understanding control engineering is essential for building systems that are stable, efficient, and safe. *A Primer On Modern Control Algorithms* provides everyone easy access to this fascinating field. Here, *modern* refers to the latest evolution stage (1960s until now) since which people have expanded their scope from frequency-domain and single-input-single-output (SISO) to time-domain and multi-input-multi-output (MIMO).
 

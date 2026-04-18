@@ -1,19 +1,40 @@
 # Contribution Guideline
 
-## Our Tech Stack
+## Toolset
 
-As you may have guessed, this blog is fully static. But, with the existence of various static-site generators (Hugo, Jekyll, Gasby), markup languages (Markdown, AsciiDoc, reStructuredText), hosting services (Netlify, AWS Amplify, Vercel), choosing one technology stack is not easy. To avoid the analysis-paralysis trap, let us walk through some important checkpoints:
+### Document language
 
-1. **Target audiences**: future me, other STEM students & industrial practitioners.
-2. **Orientation**: Wiki-like knowledge base (aka. Zettelkasten method)
-3. **Format**: tech blog containing MATLAB/Simulink/Python alongside LaTeX notes.
-4. **Desired features**: immersive reader, directed graph, fuzzy & full-text search, interactive plots.
-5. **Scalability**: might later (hopefully) become a book (> 1Gb), easy to migrate to another tech stack or server host.
-6. **Free** as in "free beer"
+APOMCA is a static blog written in [Markedly Structured Text (MyST)](https://myst-parser.readthedocs.io/en/latest/)---a Markdown flavor developed by [the ExecutableBooks team](https://compass.executablebooks.org/en/latest/team/index.html#team). It is then built by [Jupyter Book v1](https://jupyterbook.org/v1/intro.html) and hosted on [Read the Docs (RTD)](https://about.readthedocs.com/). As a result, given the same `.md` file, one should see different rendering on GitHub/Obsidian from my official publication. In fact, MyST is a backward-compatible extension of the original CommonMark. Although you can use the classic style, MyST syntaxes are preferred ([extra configuration may be required](#build-engine)). Here is a [comparison between these two flavors](https://mystmd.org/guide/syntax-overview).
 
-That list makes our concern clear enough for Google Gemini to suggest this single best choice: write in [MyST Markdown](https://jupyterbook.org/en/stable/content/myst.html) using Jupyter Lab, generate static sites using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), then host on [Read the Docs](https://about.readthedocs.com/). Follow [this tutorial](https://medium.com/@soumenatta/publishing-online-books-using-jupyter-book-and-github-pages-5960d809cbb7) if you want to create a tech blog like APOMCA.
+(build-engine)=
+### Build engine
+Again, it's [Jupyter Book version 1.0 (JB1)](https://jupyterbook.org/v1/intro.html), not the latest version 2.0 found on their homepage. Since JB1 is built on Sphinx, which has no native support for MyST, certain features are turned off by default, most notably `:::{admonition}` for admonitions and `begin{align}` for `amsmath` equations. Follow [this instruction to tell the parser](https://myst-parser.readthedocs.io/en/latest/configuration.html) how to activate them
 
-A common alternative is either [Voila](https://github.com/voila-dashboards/voila) or [Quarto](https://quarto.org/) being served on GitHub Pages. Although they provide more flexibility with vast customization, I find them quite advanced for newbies. I prefer writing content to debugging tools.
+  1. globally: apply to all source files in a project, settings are stored in `_config.yml`.
+  2. locally: apply to an individual file, settings are stored in its front matter.
+
+[Here is the list of all available parameters](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html)
+
+APOMCA has these global features activated
+
+:::{code} yaml
+parse:
+  myst_enable_extensions:
+    - amsmath # LaTeX rendering using MathJax v2.0
+    - colon_fence # MyST colon fence for admonitions, code blocks, and figures.
+    - dollarmath # LaTeX rendering for $ using MathJax v2.0
+    - linkify # Allow bare link
+    - substitution # Jinja2 templating
+    - tasklist # Checkbox
+:::
+
+### Math expressions
+
+Math expressions are written in standard LaTeX and rendered by MathJax v3 which comes by default as a dependency of Sphinx v7.
+
+### Programming language
+
+Julia. I was though using Python when this project started.
 
 ## Development Environment Setup
 <!-- This section should not be opened to everyone. I will relocate it to GitHub Wiki soon. -->
