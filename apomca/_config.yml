@@ -55,6 +55,10 @@ only_build_toc_files: true
 sphinx:
   config:
     bibtex_reference_style: author_year
+    html_static_path:
+      - _static
+    html_css_files:
+      - custom.css
     intersphinx_mapping:
       ebp:
         - "https://executablebooks.org/en/latest/"
