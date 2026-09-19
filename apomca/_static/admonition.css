@@ -1,0 +1,19 @@
+/* Customize admonition Hint. */
+.admonition.hint {
+    border-color: #6f42c1 !important;
+}
+
+.admonition.hint > .admonition-title {
+    background-color: rgba(111, 66, 193, 0.1) !important;
+}
+
+.admonition.hint > .admonition-title::after {
+    color: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+    content: "?" !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(1px);
+}
