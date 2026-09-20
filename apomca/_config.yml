@@ -60,6 +60,7 @@ sphinx:
     html_css_files:
       - admonition.css
       - prev_next.css
+      - margin_content.css
     intersphinx_mapping:
       ebp:
         - "https://executablebooks.org/en/latest/"

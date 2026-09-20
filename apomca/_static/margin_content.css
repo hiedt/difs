@@ -1,0 +1,48 @@
+/* Distinguish margin content from the article and page TOC. */
+:root {
+    --apomca-margin-bg: #f3f4f6;
+    --apomca-margin-border: #d1d5db;
+}
+
+html[data-theme="dark"] {
+    --apomca-margin-bg: #202124;
+    --apomca-margin-border: #3f4147;
+}
+
+.bd-article :is(
+    aside.margin,
+    div.margin,
+    figure.margin,
+    .margin.docutils.container,
+    span.marginnote,
+    span.sidenote
+) {
+    box-sizing: border-box;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--apomca-margin-border) !important;
+    border-radius: 0.25rem;
+    background: var(--apomca-margin-bg) !important;
+    color: var(--pst-color-text-base) !important;
+}
+
+.bd-article :is(
+    aside.margin,
+    div.margin,
+    figure.margin,
+    .margin.docutils.container,
+    span.marginnote,
+    span.sidenote
+) :is(p, li, figcaption, .sidebar-title) {
+    color: var(--pst-color-text-base) !important;
+}
+
+.bd-article :is(
+    aside.margin,
+    div.margin,
+    figure.margin,
+    .margin.docutils.container,
+    span.marginnote,
+    span.sidenote
+) > :last-child {
+    margin-bottom: 0;
+}

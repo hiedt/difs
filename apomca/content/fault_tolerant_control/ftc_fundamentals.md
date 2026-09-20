@@ -143,11 +143,13 @@ Basic architecture of a fault-tolerant system
 
 ### Redundancy
 
-> Redundant (adjective)
->
-> 3: serving as a duplicate for preventing failure of an entire system (such as a spacecraft) upon failure of a single component.
->
-> -- Merriam-Webster dictionary
+```{margin}
+*Redundant* (adj.)
+
+3: serving as a duplicate for preventing failure of an entire system (such as a spacecraft) upon failure of a single component.
+
+-- Merriam-Webster dictionary
+```
 
 Replacing a defected device during maintenance is easy but during operation is almost infeasible. One strategy in this case is to install (at least) two identical devices and switch between them if one becomes faulty. For example, if a sensor is prone to error, duplicate it; if an actuator is occasionally down, also duplicate it. This setup, aka. *physical redundancy*, soon becomes very expensive (e.g., debugging time, cost, weight, etc.) for complex machinery.
 
