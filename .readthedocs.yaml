@@ -25,3 +25,4 @@ python:
   install:
     - method: uv
       command: sync
+      path: apomca/
